@@ -8,6 +8,7 @@ from tkinter.ttk import Combobox
 from tkinter import messagebox
 
 root = Tk()
+root.config(bg="gray")
 root.resizable(False, False)
 root.geometry("1000x700")
 root.title("BMI Calculator")
@@ -82,51 +83,53 @@ lb.place(x=150, y=50, width=700, height=400)
 
 # Labels
 l1 = Label(lb, text="Weight:")
-l1.place(x=100, y=50)
+l1.place(x=100, y=150)
 l2 = Label(lb, text="kilogram")
-l2.place(x=320, y=50)
+l2.place(x=320, y=150)
 l3 = Label(lb, text="Height:")
-l3.place(x=100, y=150)
+l3.place(x=100, y=250)
 l4 = Label(lb, text="cm")
-l4.place(x=320, y=150)
+l4.place(x=320, y=250)
 l5 = Label(lb, text="Gender:")
-l5.place(x=100, y=250)
+l5.place(x=100, y=350)
 l6 = Label(lb, text="Age(Female only):")
-l6.place(x=350, y=250)
-l7 = Label(root, text="BMI:")
-l7.place(x=155, y=550)
-l8 = Label(root, text="Ideal BMI:")
-l8.place(x=500, y=550)
+l6.place(x=350, y=350)
+l7 = Label(root, text="BMI:", bg="black", fg="white")
+l7.place(x=155, y=650)
+l8 = Label(root, text="Ideal BMI:", bg="black", fg="white")
+l8.place(x=500, y=650)
+l9 = Label(root, text="Enter your Weight, Height and Gender", bg="gray")
+l9.place(x=380, y=150)
 
 # Buttons
-b1 = Button(root, text="Calculate BMI and Ideal BMI", command=calculate, width=80)
+b1 = Button(root, text="Calculate BMI and Ideal BMI", command=calculate, width=80, bg="green", fg="black")
 b1.place(x=160, y=480)
-b2 = Button(root, text="Clear", command=clearing)
+b2 = Button(root, text="Clear", command=clearing, bg="yellow")
 b2.place(x=220, y=600)
-b3 = Button(root, text="Exit", command=button_Exit)
+b3 = Button(root, text="Exit", command=button_Exit, bg="red")
 b3.place(x=720, y=600)
 
 
 # Entries
 e1 = Entry(lb, width=15)
-e1.place(x=180, y=50)
+e1.place(x=180, y=150)
 e2 = Entry(lb, width=15)
-e2.place(x=180, y=150)
+e2.place(x=180, y=250)
 e3 = Entry(lb, width=15)
-e3.place(x=480, y=250)
+e3.place(x=480, y=350)
 e4 = Entry(root, width=25, state="readonly")
-e4.place(x=200, y=550)
+e4.place(x=200, y=650)
 e5 = Entry(root, width=25, state="readonly")
-e5.place(x=580, y=550)
+e5.place(x=580, y=650)
 e6 = Entry(root, width=25, state="readonly")
-e6.place(x=390, y=600)
+e6.place(x=390, y=700)
 
 
 # ComboBox
 cb = Combobox(lb)
 cb["values"] = ("Male", "Female")
 cb.config(state="readonly")
-cb.place(x=160, y=250)
+cb.place(x=160, y=350)
 
 
 # run program
